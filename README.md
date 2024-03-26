@@ -1,5 +1,17 @@
 ## Overview
 
+# SSH Testing
+node {
+  sshagent (['docker-log-ubuntu-keys']) {
+    sh 'ssh -o StrictHostKeyChecking=no -l ubuntu 52.66.118.7 who'
+  }
+}
+
+node {
+  sshagent (['docker-log-ubuntu-keys']) {
+    sh 'ssh -o StrictHostKeyChecking=no -l ubuntu 52.66.118.7 uname -a'
+  }
+}
 
 ## Key Python Modules Used
 - Flask: micro-framework for web application development
